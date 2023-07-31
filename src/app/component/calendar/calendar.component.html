@@ -1,0 +1,19 @@
+<div>
+    <div style="float: left;">
+        <ejs-schedule #scheduleObj height="330" width="1000" [eventSettings]="eventObject" [selectedDate]="setDate" [currentView]="setview" [views]="setViews" (actionBegin)="dataSourceChanged($event)" [timeScale]="{ interval: 240,slotCount: 1 } " (dragStart)="onDragStart($event)"
+            (resizeStart)="onResizeStart($event)" (popupOpen)="onPopupOpen($event)" [allowResizing]=true>
+            <ng-template #eventPopupTemplate let-data>
+                <!-- Votre contenu personnalisé pour le popup d'événement -->
+                <div>
+                    <!-- <h4>{{ data.Subject }}</h4>
+                    <p>{{ data.Description }}</p>
+                    <p>Start: {{ data.StartTime | date:'short' }}</p>
+                    <p>End: {{ data.EndTime | date:'short' }}</p> -->
+                    <p>Je suis La</p>
+                </div>
+            </ng-template>
+        </ejs-schedule>
+    </div>
+
+    <ejs-treeview [fields]="field" allowDragAndDrop="true" (nodeDragStop)="onTreeDragStop($event)"></ejs-treeview>
+</div>

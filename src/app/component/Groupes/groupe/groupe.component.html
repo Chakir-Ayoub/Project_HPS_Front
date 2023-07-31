@@ -1,0 +1,25 @@
+<div class="row">
+    <button class="btn-circle"><i class="fas fa-plus" (click)="addNew()"></i></button>
+    <div class="col-md-6" *ngFor="let item of group">
+
+        <div class="card border-primary mb-3">
+            <div class="card-header" style="background: lightblue;">
+                <strong>Nom:</strong> {{item.nomgroupe}}
+
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="background-color: lightblue;"><strong>Id :</strong> {{item.idgroup}} </li>
+                    <li class="list-group-item" style="background-color: lightblue;"><strong>Nomber des Personnes  :</strong> {{item.numuser}} </li>
+                    <li class="list-group-item text-center" style="background-color: rgba(53, 108, 168, 0.167);">
+                        <!-- [routerLink]="['user', user.id, 'details']" -->
+
+                        <button class="btn btn-primary mr-2" (click)="Edite(item.idgroup)">Edit</button>
+                        <button class="btn btn-dark mr-2" (click)="Remove(item.idgroup)">Delete</button>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

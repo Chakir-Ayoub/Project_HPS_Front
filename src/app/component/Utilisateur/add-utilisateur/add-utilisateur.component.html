@@ -1,0 +1,61 @@
+<div class="contact-form">
+    <form #f="ngForm" (submit)="onsubmit()">
+        <div id="user-data" ngModelGroup="userdata" #userdata="ngModelGroup">
+            <div class="modalHeader">
+                <div class="editRowModal">
+                    <div class="modal-about">
+                        <h2 class="modal-title" id="modal-basic-title">Ajouter Nouveau Utilisateur </h2>
+                    </div>
+                </div>
+                <button class="btn btn-outline-dark" (click)="closeDialog()" type="button" aria-label="Close dialog">
+                    <i class="fas fa-times"></i>
+                  </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <label for="nom" class="form-label">Nom</label>
+                        <input type="text" id="nom" name="nom" class="form-control" ngModel required #nom="ngModel">
+                        <span *ngIf="!nom.valid && nom.touched">Merci d'entrer un Nom valide</span>
+                    </div>
+                    <div class="col-6">
+                        <label for="nom" class="form-label">Prenom</label>
+                        <input type="text" id="prenom" name="prenom" class="form-control" ngModel required #prenom="ngModel">
+                        <span *ngIf="!prenom.valid && prenom.touched">Merci d'entrer un Prenom valide</span>
+                    </div>
+                    <div class="col-6">
+                        <label for="nom" class="form-label">Date Naissance</label>
+                        <input type="date" id="date_naiss" name="date_naiss" class="form-control" ngModel required #date_naiss="ngModel">
+                        <span *ngIf="!date_naiss.valid && date_naiss.touched">Merci d'entrer une Date Naissance valide</span>
+                    </div>
+                    <div class="col-6">
+                        <label for="nom" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" email class="form-control" ngModel required #email="ngModel">
+                        <span *ngIf="!email.valid && email.touched">Merci d'entrer un Email valide</span>
+                    </div>
+                    <div class="col-6">
+                        <label for="nom" class="form-label">Telephone</label>
+                        <input type="number" id="telephone" name="telephone" class="form-control" ngModel required #telephone="ngModel">
+                        <span *ngIf="!telephone.valid && telephone.touched">Merci d'entrer un Numero de Telephone valide</span>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-6">
+                        <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
+                        Save
+                      </button>
+                        <button class="btn btn-secondary" type="button" mat-raised-button (click)="closeDialog()">
+                        Cancel
+                      </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </form>
+
+</div>

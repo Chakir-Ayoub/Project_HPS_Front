@@ -1,0 +1,40 @@
+<div class="contact-form">
+    <form (ngSubmit)="onsubmit()" #f="ngForm">
+        <div id="group-data" ngModelGroup="groupdata" #groupdata="ngModelGroup">
+            <div class="modalHeader">
+                <div class="editRowModal">
+                    <div class="modal-about">
+                        <h2 class="modal-title" id="modal-basic-title">Add new Group</h2>
+                    </div>
+                </div>
+                <button class="btn btn-outline-dark" (click)="closeDialog()" type="button" aria-label="Close dialog">
+                    <i class="fas fa-times"></i>
+                  </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <label for="nom" class="form-label">Nom Group</label>
+                        <input type="text" id="nom" name="nom" class="form-control" ngModel required #nom="ngModel">
+                        <span *ngIf="!nom.valid && nom.touched">Please entre a valide name</span>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-6">
+                        <button class="btn btn-primary" type="submit">
+                        Save
+                      </button>
+                        <button class="btn btn-secondary" type="button" mat-raised-button (click)="closeDialog()">
+                        Cancel
+                      </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>

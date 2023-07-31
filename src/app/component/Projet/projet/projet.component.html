@@ -1,0 +1,23 @@
+<div class="row">
+    <button class="btn-circle"><i class="fas fa-plus" (click)=" addNew()"></i></button>
+    <div class="col-md-6" *ngFor="let item of projet">
+
+        <div class="card border-primary mb-3">
+
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="background-color: lightblue;"><strong>Nom du Projet  :</strong> {{item.nomprojet}} </li>
+                    <li class="list-group-item" style="background-color: lightblue;"><strong>Description  :</strong> {{item.description}} </li>
+                    <li class="list-group-item" style="background-color: lightblue;"><strong>Date de d'marrage  :</strong> {{item.datedemarrage}} </li>
+                    <li class="list-group-item" style="background-color: lightblue;"><strong>date de livraison  :</strong> {{item.datelivraison}} </li>
+
+                    <li class="list-group-item text-center" style="background-color: rgba(53, 108, 168, 0.167);">
+                        <!-- [routerLink]="['user', user.id, 'details']" -->
+                        <button class="btn btn-primary mr-2" (click)="Edite(item.idprojet)">Edit</button>
+                        <button class="btn btn-dark mr-2" (click)="Delete(item.idprojet)">Delete</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

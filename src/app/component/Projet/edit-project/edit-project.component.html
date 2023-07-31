@@ -1,0 +1,58 @@
+<div class="contact-form">
+    <form (submit)="onsubmit()" #f="ngForm">
+        <div id="projet-data" ngModelGroup="projetdata" #projetdata="ngModelGroup">
+            <div class="modalHeader">
+                <div class="editRowModal">
+                    <div class="modal-about">
+                        <h2 class="modal-title" id="modal-basic-title">Modifier un Projet </h2>
+                    </div>
+                </div>
+                <button class="btn btn-outline-dark" (click)="closeDialog()" type="button" aria-label="Close dialog">
+                    <i class="fas fa-times"></i>
+                  </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <label for="nom" class="form-label">Nom</label>
+                        <input type="text" id="nomprojet" name="nomprojet" class="form-control" [ngModel]=" this.projcet.nomprojet" required #nomprojet="ngModel">
+                        <span *ngIf="!nomprojet.valid && nomprojet.touched">Merci d'entrer un Nom valide</span>
+                    </div>
+                    <div class="col-6">
+                        <label for="nom" class="form-label">Description</label>
+                        <input type="text" id="description" name="description" class="form-control" [ngModel]=" this.projcet.description" required #description="ngModel">
+                        <span *ngIf="!description.valid && description.touched">Merci d'entrer une Description valide</span>
+                    </div>
+                    <div class="col-6">
+                        <label for="nom" class="form-label">Date Demarrage</label>
+                        <input type="date" id="datedemarrage" name="datedemarrage" class="form-control" [ngModel]="this.projcet.datedemarrage" required #datedemarrage="ngModel">
+                        <span *ngIf="!datedemarrage.valid && datedemarrage.touched">Merci d'entrer une Date de Demarrage valide</span>
+                    </div>
+                    <div class="col-6">
+                        <label for="nom" class="form-label">Date de Livraison</label>
+                        <input type="date" id="datelivraison" name="datelivraison" class="form-control" [ngModel]="this.projcet.datelivraison" required #datelivraison="ngModel">
+                        <span *ngIf="!datelivraison.valid && datelivraison.touched">Merci d'entrer une Date de Livraison valide</span>
+                    </div>
+
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-6">
+                        <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
+                        Save
+                      </button>
+                        <button class="btn btn-secondary" type="button" mat-raised-button (click)="closeDialog()">
+                        Cancel
+                      </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </form>
+
+</div>
